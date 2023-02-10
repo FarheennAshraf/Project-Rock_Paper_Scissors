@@ -9,11 +9,11 @@ function getComputerChoice(){
 
 // #Call the getComputer and store the returned value in computerSelection variable
 let computerSelection = getComputerChoice();
-console.log(computerSelection);
+// console.log(computerSelection);
 
 // #Take user input from the prompt and store it in playerSelection variable.
 let playerSelection = prompt('Enter your choice:');
-console.log(playerSelection);
+// console.log(playerSelection);
 
 // #Define another function that plays a single round of rock, paper, scissors and returns a string.
 // #If the player input and computer input are equal, it is a tie. Case-insensitive comparison.
