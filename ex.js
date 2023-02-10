@@ -8,6 +8,12 @@ function getComputerChoice(){
     return computerChoice;
 }
 
+// #Define a function to getPlayerChoice, also set default value to avoid null values
+function getPlayerChoice(){
+    let playerSelection = prompt("Enter your choice: ", "Rock");
+    return playerSelection;
+}
+
 
 // #Define a function that plays a single round of rock, paper, scissors and returns a string.
 // #If the player input and computer input are equal, it is a tie. Case-insensitive comparison.
@@ -63,7 +69,7 @@ function singleRound(computerSelection, playerSelection){
         }
     }
 }
-
+// Play Single Round Game:
 // #Call the getComputerChoice() and store the returned value in computerSelection variable
 // const computerSelection = getComputerChoice();
 // console.log(computerSelection);
@@ -81,7 +87,7 @@ function singleRound(computerSelection, playerSelection){
 // #2. Get computerSelection & playerSelection for each iteration i.e 5 times.
 for(let i=1; i<=5; i++){
     const computerSelection = getComputerChoice();
-    const playerSelection = prompt("Enter your choice:");
+    const playerSelection = getPlayerChoice();
     console.log(playerSelection);
     console.log(computerSelection);
     console.log(singleRound(computerSelection,playerSelection));
