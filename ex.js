@@ -70,3 +70,8 @@ console.log(playerSelection);
 // #Call function passing the functions: getComputerChoice() & getPlayerChoice(), that return inputs, as parameters.
 console.log(singleRound(computerSelection, playerSelection));
 
+
+// #Play 5 Round Game:
+// #1. Add a new function game(). call singleRound() inside to iterate 5 times. Display results of each round.
+// #2. Keep a score in each iteration
+// #3. return a string stating winner or loser at end.
