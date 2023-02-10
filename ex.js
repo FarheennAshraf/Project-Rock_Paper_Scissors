@@ -7,21 +7,16 @@ function getComputerChoice(){
     return computerChoice;
 }
 
-// #Call the getComputer and store the returned value in computerSelection variable
-let computerSelection = getComputerChoice();
-// console.log(computerSelection);
-
-// #Take user input from the prompt and store it in playerSelection variable.
-let playerSelection = prompt('Enter your choice:');
-// console.log(playerSelection);
-
-// #Define another function that plays a single round of rock, paper, scissors and returns a string.
+// #Define a function that plays a single round of rock, paper, scissors and returns a string.
 // #If the player input and computer input are equal, it is a tie. Case-insensitive comparison.
 // #Else 
 // #If the player input is 'Rock' & computer input is 'Scissors', Player wins; else Player loses.
 // #ElseIf the player input is 'Scissors' & computer input is 'Paper', Player wins; else Player loses.
 // #ElseIf the player input is 'Paper' & computer input is 'Rock', Player wins; else Player loses.
 // #Else the player input is invalid.
+//  Change 3: Add a counter;
+let counterComp = 0;
+let counterPlayer = 0;
 function singleRound(computerSelection, playerSelection){
     if(computerSelection.toLowerCase() === playerSelection.toLowerCase()){
         return "It's a tie!";
@@ -29,25 +24,32 @@ function singleRound(computerSelection, playerSelection){
     else{
         if(playerSelection.toLowerCase() === 'rock'){
             if(computerSelection.toLowerCase() === 'scissors'){
+                counterPlayer++;
                 return `You win! ${playerSelection} beats ${computerSelection}`;
             }
             else{
+                counterComp++;
                 return `You lose! ${computerSelection} beats ${playerSelection}`;
             }
         }
         else if(playerSelection.toLowerCase() === 'paper'){
             if(computerSelection.toLowerCase() === 'rock'){
+                counterPlayer++;
                 return `You win! ${playerSelection} beats ${computerSelection}`;
             }
             else{
+                counterComp++;
                 return `You lose! ${computerSelection} beats ${playerSelection}`;
+                
             }
         }
         else if(playerSelection.toLowerCase() === 'scissors'){
             if(computerSelection.toLowerCase() === 'paper'){
-                return `You win! ${playerSelection} beats ${computerSelection}`
+                counterPlayer++;
+                return `You win! ${playerSelection} beats ${computerSelection}`;
             }
             else{
+                counterComp++;
                 return `You lose! ${computerSelection} beats ${playerSelection}`;
             }
         }
@@ -57,5 +59,14 @@ function singleRound(computerSelection, playerSelection){
     }
 }
 
-// #Call function passing the player input as playerSelection and computer input as computerSelection.
-alert(singleRound(computerSelection, playerSelection));
+// #Call the getComputerChoice() and store the returned value in computerSelection variable
+const computerSelection = getComputerChoice();
+console.log(computerSelection);
+
+// #Take input from the user
+const playerSelection = prompt("Enter your choice:");
+console.log(playerSelection);
+
+// #Call function passing the functions: getComputerChoice() & getPlayerChoice(), that return inputs, as parameters.
+console.log(singleRound(computerSelection, playerSelection));
+
