@@ -14,7 +14,8 @@ function getComputerChoice(){
 // #ElseIf the player input is 'Scissors' & computer input is 'Paper', Player wins; else Player loses.
 // #ElseIf the player input is 'Paper' & computer input is 'Rock', Player wins; else Player loses.
 // #Else the player input is invalid.
-//  Change 3: Add a counter;
+
+// Add a counter to maintain score;
 let counterComp = 0;
 let counterPlayer = 0;
 function singleRound(computerSelection, playerSelection){
@@ -24,10 +25,12 @@ function singleRound(computerSelection, playerSelection){
     else{
         if(playerSelection.toLowerCase() === 'rock'){
             if(computerSelection.toLowerCase() === 'scissors'){
+                //Add counter, increment if player wins
                 counterPlayer++;
                 return `You win! ${playerSelection} beats ${computerSelection}`;
             }
             else{
+                //Add counter, increment if computer wins
                 counterComp++;
                 return `You lose! ${computerSelection} beats ${playerSelection}`;
             }
@@ -60,18 +63,28 @@ function singleRound(computerSelection, playerSelection){
 }
 
 // #Call the getComputerChoice() and store the returned value in computerSelection variable
-const computerSelection = getComputerChoice();
-console.log(computerSelection);
+// const computerSelection = getComputerChoice();
+// console.log(computerSelection);
 
 // #Take input from the user
-const playerSelection = prompt("Enter your choice:");
-console.log(playerSelection);
+// const playerSelection = prompt("Enter your choice:");
+// console.log(playerSelection);
 
 // #Call function passing the functions: getComputerChoice() & getPlayerChoice(), that return inputs, as parameters.
-console.log(singleRound(computerSelection, playerSelection));
+// console.log(singleRound(computerSelection, playerSelection));
 
 
 // #Play 5 Round Game:
-// #1. Add a new function game(). call singleRound() inside to iterate 5 times. Display results of each round.
-// #2. Keep a score in each iteration
-// #3. return a string stating winner or loser at end.
+// #1. Add a new function game(). call singleRound() inside for loop to iterate 5 times. Display results of each round.
+// #2. Get computerSelection & playerSelection for each iteration i.e 5 times.
+for(let i=1; i<=5; i++){
+    const computerSelection = getComputerChoice();
+    console.log(computerSelection);
+    const playerSelection = prompt("Enter your choice:")
+    console.log(playerSelection);
+    console.log(singleRound(computerSelection,playerSelection));
+    // #3. Keep a score in each iteration. Add each counter for computer and player and increment it for the one who wins.
+    console.log(counterComp);
+    console.log(counterPlayer);
+}
+// #3. Compare the counters, the greater wins. return a string stating winner or loser at end.
