@@ -1,11 +1,13 @@
 // #Define an array with valid input values 'Rock', 'Paper', 'Scissors'
 let choiceArr = ['Rock', 'Paper', 'Scissors'];
 
+
 // #Define a function getComputerChoice that returns a random value either 'Rock', 'Paper', 'Scissors'
 function getComputerChoice(){
     let computerChoice = choiceArr[Math.floor(Math.random()*choiceArr.length)];
     return computerChoice;
 }
+
 
 // #Define a function that plays a single round of rock, paper, scissors and returns a string.
 // #If the player input and computer input are equal, it is a tie. Case-insensitive comparison.
@@ -15,7 +17,7 @@ function getComputerChoice(){
 // #ElseIf the player input is 'Paper' & computer input is 'Rock', Player wins; else Player loses.
 // #Else the player input is invalid.
 
-// Add a counter to maintain score;
+//update: Add a counter to maintain score;
 let counterComp = 0;
 let counterPlayer = 0;
 function singleRound(computerSelection, playerSelection){
@@ -79,12 +81,21 @@ function singleRound(computerSelection, playerSelection){
 // #2. Get computerSelection & playerSelection for each iteration i.e 5 times.
 for(let i=1; i<=5; i++){
     const computerSelection = getComputerChoice();
-    console.log(computerSelection);
-    const playerSelection = prompt("Enter your choice:")
+    const playerSelection = prompt("Enter your choice:");
     console.log(playerSelection);
+    console.log(computerSelection);
     console.log(singleRound(computerSelection,playerSelection));
     // #3. Keep a score in each iteration. Add each counter for computer and player and increment it for the one who wins.
-    console.log(counterComp);
-    console.log(counterPlayer);
+    console.log("Computer : "+counterComp);
+    console.log("Player : "+counterPlayer);
 }
+
+// #4. Display the score
+console.log(`Score -  Computer_${counterComp}: Player_${counterPlayer}`);
+
 // #3. Compare the counters, the greater wins. return a string stating winner or loser at end.
+if(counterComp > counterPlayer){
+    console.log("You lose! Computer wins!");
+} else{
+    console.log("You win! Computer loses!");
+}
