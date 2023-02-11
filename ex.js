@@ -85,7 +85,7 @@ function game(){
     for(let i=1; i<=5; i++){
         // const computerSelection = getComputerChoice();
         // const playerSelection = getPlayerChoice();
-        console.log(playRound(computerSelection,playerSelection));
+        console.log(playRound());
         // #3. Keep a score in each iteration. Add each counter for computer and player and increment it for the one who wins.
         console.log("Computer : "+counterComp);
         console.log("Player : "+counterPlayer);
