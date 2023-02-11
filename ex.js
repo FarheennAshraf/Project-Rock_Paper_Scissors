@@ -10,7 +10,7 @@ function getComputerChoice(){
 
 // #Define a function to getPlayerChoice, also set default value to avoid null values
 function getPlayerChoice(){
-    let playerSelection = prompt("Enter your choice: ", "Rock");
+    let playerSelection = prompt("Rock, Paper, Scissors, shoot... ");
     return playerSelection;
 }
 
