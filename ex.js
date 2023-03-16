@@ -76,12 +76,16 @@ function playRound(computerSelection = getComputerChoice(), playerSelection = ge
     } 
  }
 
-
-
+function clearCounters(){
+    counterComp = 0;
+    counterPlayer = 0;
+}
 // #Play 5 Round Game:
 // #1. Add a new function game(). call playRound() inside for loop to iterate 5 times. Display results of each round.
 // #2. Get computerSelection & playerSelection for each iteration i.e 5 times. (not needed, call the functions to get each selection in playRound() parameters.)
 function game(){
+    // Clear the counters as it may store value already if the playRound is executed
+    clearCounters();
     for(let i=1; i<=5; i++){
         // const computerSelection = getComputerChoice();
         // const playerSelection = getPlayerChoice();
