@@ -8,10 +8,15 @@ function getComputerChoice(){
     return computerChoice;
 }
 
-// #Define a function to getPlayerChoice, also set default value to avoid null values
+// #Define a function to getPlayerChoice, add the necessary checks for null/undefined and other random prompts
 function getPlayerChoice(){
     let playerSelection = prompt("Rock, Paper, Scissors, shoot... ");
-    return playerSelection;
+    if(playerSelection){
+        if(playerSelection.toLowerCase() === 'rock'|| playerSelection.toLowerCase() === 'scissors' || playerSelection.toLowerCase() === 'paper') return playerSelection;  
+    }
+    // logs the error message, doesn't return it
+    // returns undefined by default for null/undefined and other random values
+    console.log("Please enter a valid choice!");
 }
 
 //updated: Add a counter to maintain score;
@@ -30,7 +35,7 @@ function playRound(computerSelection = getComputerChoice(), playerSelection = ge
     if(playerSelection){
         console.log(`Player's choice: ${playerSelection}`);
         console.log(`Computer's choice: ${computerSelection}`);
-        if(computerSelection.toLowerCase() === playerSelection.toLowerCase()){
+        if(playerSelection.toLowerCase() === computerSelection.toLowerCase()){
             return "It's a tie!";
         }
         else{
@@ -66,15 +71,10 @@ function playRound(computerSelection = getComputerChoice(), playerSelection = ge
                     return `You lose! ${computerSelection} beats ${playerSelection}`;
                 }
             }
-            else{
-                return "Please enter a valid choice!";
-            }
-        }    
-    } 
-    else{
-        return "Please enter a valid choice";
-    } 
- }
+        }
+    }
+    // else return "Please enter a valid choice!";
+}
 
 function clearCounters(){
     counterComp = 0;
